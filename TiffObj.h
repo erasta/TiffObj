@@ -1,6 +1,8 @@
 #ifndef __TIFF_OBJ__H__
 #define __TIFF_OBJ__H__
 
+#include "tiffio.h"
+
 class TiffObj
 {
 public:
