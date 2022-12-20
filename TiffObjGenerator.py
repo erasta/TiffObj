@@ -2,13 +2,16 @@ import urllib.request, os
 import CppHeaderParser
 
 target_url = 'https://gitlab.com/libtiff/libtiff/-/raw/master/libtiff/tiffio.h'
-filename = os.path.basename(target_url)
+# filename = os.path.basename(target_url)
 # print(filename)
-with open(filename, 'w') as f:
-  for line in urllib.request.urlopen(target_url):
-    f.write(line.decode('utf-8'))
+lines = [line.decode('utf-8') for line in urllib.request.urlopen(target_url)]
+text = ''.join(lines)
+# with open(filename, 'w') as f:
+#   for line in urllib.request.urlopen(target_url):
+#     f.write(line.decode('utf-8'))
     
-header = CppHeaderParser.CppHeader(filename)
+# header = CppHeaderParser.CppHeader(filename)
+header = CppHeaderParser.CppHeader(text, "string")
 
 def get_param(p, pind):
   ptype = p['type']
