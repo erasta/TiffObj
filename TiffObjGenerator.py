@@ -92,6 +92,8 @@ def gen_create_tif_func(f):
 print('#ifndef __TIFF_OBJ__H__')
 print('#define __TIFF_OBJ__H__')
 print()
+print('#include "tiffio.h"')
+print()
 print('class TiffObj')
 print('{')
 print('public:')
