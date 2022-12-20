@@ -39,4 +39,4 @@ jobs:
 #         pytest
     - name: Generate
       run: |
-        python -m TiffObjGenerator.py
+        python -m TiffObjGenerator
