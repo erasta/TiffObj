@@ -3,7 +3,7 @@ import CppHeaderParser
 
 target_url = 'https://gitlab.com/libtiff/libtiff/-/raw/master/libtiff/tiffio.h'
 filename = os.path.basename(target_url)
-print(filename)
+# print(filename)
 with open(filename, 'w') as f:
   for line in urllib.request.urlopen(target_url):
     f.write(line.decode('utf-8'))
