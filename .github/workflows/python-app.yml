@@ -32,8 +32,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Generate
       run: |
-        cd generate
-        python -m TiffObjGenerator > ../src/TiffObj.h
+        cd generate && python -m TiffObjGenerator > ../src/TiffObj.h
     - name: Commit files
       id: commit
       run: |
