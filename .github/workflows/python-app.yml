@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r generate/requirements.txt; fi
+        if [ -f generate/requirements.txt ]; then pip install -r generate/requirements.txt; fi
     - name: Generate
       run: |
         mkdir -p src
