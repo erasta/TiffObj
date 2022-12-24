@@ -1,7 +1,8 @@
 import urllib.request, os
 import CppHeaderParser
 
-target_url = 'https://gitlab.com/libtiff/libtiff/-/raw/master/libtiff/tiffio.h'
+# target_url = 'https://gitlab.com/libtiff/libtiff/-/raw/master/libtiff/tiffio.h'
+target_url = 'https://gitlab.com/libtiff/libtiff/-/raw/v4.0.9/libtiff/tiffio.h'
 # filename = os.path.basename(target_url)
 # print(filename)
 lines = [line.decode('utf-8') for line in urllib.request.urlopen(target_url)]
@@ -9,7 +10,7 @@ text = ''.join(lines)
 # with open(filename, 'w') as f:
 #   for line in urllib.request.urlopen(target_url):
 #     f.write(line.decode('utf-8'))
-    
+
 # header = CppHeaderParser.CppHeader(filename)
 header = CppHeaderParser.CppHeader(text, "string")
 
@@ -92,7 +93,7 @@ def gen_create_tif_func(f):
 print('#ifndef __TIFF_OBJ__H__')
 print('#define __TIFF_OBJ__H__')
 print()
-print('#include "tiffio.h"')
+print('#include <tiffio.h>')
 print()
 print('class TiffObj')
 print('{')

@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 3.24.0)
+project (TiffObj)
+find_package(TIFF REQUIRED)
+include_directories(${TIFF_INCLUDE_DIRS})
+add_executable (TiffObjDemo demo/demo.cpp)
+target_link_libraries(TiffObjDemo ${TIFF_LIBRARIES})
