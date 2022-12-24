@@ -27,11 +27,13 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
+        cd generate
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Generate
       run: |
-        python -m TiffObjGenerator > TiffObj.h
+        cd generate
+        python -m TiffObjGenerator > ../src/TiffObj.h
     - name: Commit files
       id: commit
       run: |
